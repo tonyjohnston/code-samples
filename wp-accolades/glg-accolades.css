@@ -1,57 +1,60 @@
 /* Random quote */
-#glgaccolades-scroller {
-	overflow: hidden;
-	position: relative;
-	height: 240px;
-	background: -webkit-gradient(linear, left top, right top, from(#dcdcdc), color-stop(0.25, #fff), color-stop(0.5, #fff), color-stop(0.75, #fff), to(#dcdcdc));
-	background: -webkit-linear-gradient(top, #dcdcdc, #fff, #fff, #fff, #dcdcdc);
-	background: -moz-linear-gradient(top, #dcdcdc, #fff, #fff, #fff, #dcdcdc);
-	background: -ms-linear-gradient(top, #dcdcdc, #fff, #fff, #fff, #dcdcdc);
-	background: -o-linear-gradient(top, #dcdcdc, #fff, #fff, #fff, #dcdcdc);
-	box-shadow: inset 10px 0 10px -10px #333, inset -10px 0 10px -10px #333;
-	padding: 0 20px 0 20px;
-	margin: 30px 0 30px;
-	
-}
-.glgaccolades-scroller q {
-	font-weight: bold;
+#scrolling_accolades-scroller {
+    overflow: hidden;
+    position: relative;
+    height: 240px;
+    background: -webkit-gradient(linear, left top, right top, from(#dcdcdc), color-stop(0.25, #fff), color-stop(0.5, #fff), color-stop(0.75, #fff), to(#dcdcdc));
+    background: -webkit-linear-gradient(top, #dcdcdc, #fff, #fff, #fff, #dcdcdc);
+    background: -moz-linear-gradient(top, #dcdcdc, #fff, #fff, #fff, #dcdcdc);
+    background: -ms-linear-gradient(top, #dcdcdc, #fff, #fff, #fff, #dcdcdc);
+    background: -o-linear-gradient(top, #dcdcdc, #fff, #fff, #fff, #dcdcdc);
+    box-shadow: inset 10px 0 10px -10px #333, inset -10px 0 10px -10px #333;
+    padding: 0 20px 0 20px;
+    margin: 30px 0 30px;
+
 }
 
-.glgaccolades-scroller cite {
-	display:block; /* To display author and source in a new line */
-	text-align:left; 
-	font-weight: bold;
-	color: #e20074;
+.scrolling_accolades-scroller q {
+    font-weight: bold;
 }
 
-.glgaccolades-scroller_author { /* author */
-	font-style:normal;
+.scrolling_accolades-scroller cite {
+    display: block; /* To display author and source in a new line */
+    text-align: left;
+    font-weight: bold;
+    color: #e20074;
 }
 
-.glgaccolades-scroller_source { /* source */
-	font-style: italic;
-	color: #000000;
-	font-weight: normal;
+.scrolling_accolades-scroller_author {
+    /* author */
+    font-style: normal;
+}
+
+.scrolling_accolades-scroller_source {
+    /* source */
+    font-style: italic;
+    color: #000000;
+    font-weight: normal;
 }
 
 /* Quotes page */
-div.glgaccolades-scroller {
-	border:0;
-	background:none;
-	padding:0;
-	font-size:1em;
+div.scrolling_accolades-scroller {
+    border: 0;
+    background: none;
+    padding: 0;
+    font-size: 1em;
 }
 
-div.glgaccolades-scroller q {
-	font-weight: bold;
+div.scrolling_accolades-scroller q {
+    font-weight: bold;
 }
-div.glgaccolades-scroller q a {
-	color: black;
+
+div.scrolling_accolades-scroller q a {
+    color: black;
 }
 
 /* See http://www.w3schools.com/css/pr_gen_quotes.asp */
-q:lang(en)
-{
+q:lang(en) {
     quotes: "“" "”" "‘" "’";
 }
 

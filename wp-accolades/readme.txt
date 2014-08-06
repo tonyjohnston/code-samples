@@ -1,4 +1,4 @@
-=== GLG Accolades ===
+=== Scrolling Accolades ===
 Contributors: SriniG, tony.johnston
 Tags: quotes collection, quotes, quotations, random quote, sidebar, widget, ajax, shortcode
 Requires at least: 2.8
@@ -25,7 +25,7 @@ Quotes Collection plugin helps you collect, manage and display your favourite qu
 	* Option to refresh the quote automatically
 	* Show only quotes with certain tags
 	* Specify a character limit and filter out bigger quotes
-* **Shortcode**: Quotes can be displayed in a WordPress page by placing a `[quotcoll]`shortcode. Few examples are provided below. For more examples and the full list of arguments, please refer the [plugin homepage](http://srinig.com/wordpress/plugins/glg-accolades/) or 'other notes'. *(Note: The new `[quotcoll]` shortcode is introduced in version 1.5, that makes use of the WordPress shortcode API. The older `[quote]` shortcode is deprecated, though it will still work as a measure of backwards compatibility.)* 
+* **Shortcode**: Quotes can be displayed in a WordPress page by placing a `[quotcoll]`shortcode. Few examples are provided below. For more examples and the full list of arguments, please refer the [plugin homepage](http://srinig.com/wordpress/plugins/scrolling-accolades/) or 'other notes'. *(Note: The new `[quotcoll]` shortcode is introduced in version 1.5, that makes use of the WordPress shortcode API. The older `[quote]` shortcode is deprecated, though it will still work as a measure of backwards compatibility.)*
 	* Placing `[quotcoll]` in the page displays all quotes.
 	* `[quotcoll author="Somebody"]` displays quotes authored by Somebody.
 	* `[quotcoll tags="tag1,tag2,tag3"]` displays quotes tagged tag1 or tag2 or tag3, one or more or all of these
@@ -34,10 +34,10 @@ Quotes Collection plugin helps you collect, manage and display your favourite qu
 * Compatible with WordPress 3.0 multi-site functionality.
 * The plugin suppports localization. Refer the plugin page or 'other notes' for the full list of available languages and the respective translators. 
 
-For more information, visit the [plugin homepage](http://srinig.com/wordpress/plugins/glg-accolades/). Please provide your feedback at the [WordPress support forums](http://wordpress.org/tags/glg-accolades?forum_id=10).
+For more information, visit the [plugin homepage](http://srinig.com/wordpress/plugins/scrolling-accolades/). Please provide your feedback at the [WordPress support forums](http://wordpress.org/tags/scrolling-accolades?forum_id=10).
 
 == Installation ==
-1. Upload `glg-accolades` directory to the `/wp-content/plugins/` directory
+1. Upload `scrolling-accolades` directory to the `/wp-content/plugins/` directory
 1. Activate the 'Quotes Collection' plugin through the 'Plugins' menu in WordPress
 1. Add and manage the quotes through the 'Quotes' menu in the WordPress admin area
 1. To display a random quote in the sidebar, go to 'Widgets' menu and drag the 'Random Quote' widget into the sidebar
@@ -46,11 +46,11 @@ For more information, visit the [plugin homepage](http://srinig.com/wordpress/pl
 
 = How to get rid of the quotation marks that surround the random quote? =
 
-Open the glg-accolades.css file that comes along with the plugin, scroll down and look towards the bottom.
+Open the scrolling-accolades.css file that comes along with the plugin, scroll down and look towards the bottom.
 
 = How to change the random quote text color? =
 
-Styling such as text color, font size, background color, etc., of the random quote can be customized by editing the glg-accolades.css file. Please also note that any updates to the plugin will overwrite your customized css file, so it's advisable to backup your customization before updating the plugin.
+Styling such as text color, font size, background color, etc., of the random quote can be customized by editing the scrolling-accolades.css file. Please also note that any updates to the plugin will overwrite your customized css file, so it's advisable to backup your customization before updating the plugin.
 
 = How to hide the 'Next quote »' link? = 
 
@@ -58,7 +58,7 @@ You can do this by turning off the 'Ajax Refresh' feature in widget options.
 
 = How to change the link text from 'Next quote »' to something else? =
 
-Change the value of the variable `$quotescollection_next_quote` on line 34 of the glg-accolades.php file.
+Change the value of the variable `$quotescollection_next_quote` on line 34 of the scrolling-accolades.php file.
 
 = The 'Next quote »' link is not working. Why? =
 
@@ -74,7 +74,7 @@ There can be conflicts and undesirable behaviour when more than one instance of 
 
 = How to change the admin access level setting for the quotes collection admin page? =
 
-Change the value of the variable `$quotescollection_admin_userlevel` on line 44 of the glg-accolades.php file. Refer [WordPress documentation](http://codex.wordpress.org/Roles_and_Capabilities) for more information about user roles and capabilities.
+Change the value of the variable `$quotescollection_admin_userlevel` on line 44 of the scrolling-accolades.php file. Refer [WordPress documentation](http://codex.wordpress.org/Roles_and_Capabilities) for more information about user roles and capabilities.
 
 = I have a long list of quotes, and the `[quotcoll]` shortcode puts all of the quotes in a single page. Is there a way to introduce pagination and break the long list of quotes into different pages? =
 
@@ -215,7 +215,7 @@ Versions 1.1 and greater support localization. As of the current version, locali
 * `hr_HR` / Croatian / [1984da](http://faks.us/)
 * `hu_HU` / Hungarian / [KOOS, Tamas](http://www.koosfoto.hu/)
 * `id_ID` / Bahasa Indonesia / [Kelayang](http://kelayang.com/)
-* `it_IT` / Italian / [Gianni Diurno  (aka gidibao)](http://gidibao.net/index.php/2008/05/26/glg-accolades-in-italiano/)
+* `it_IT` / Italian / [Gianni Diurno  (aka gidibao)](http://gidibao.net/index.php/2008/05/26/scrolling-accolades-in-italiano/)
 * `ja` / Japanese / [Urepko Asaba](http://www.urepko.net/)
 * `lt_LT` / Lithuanian / Lulilo
 * `lv_LV` / Latvian / [Maris Svirksts](http://www.moskjis.com/)
@@ -235,7 +235,7 @@ Versions 1.1 and greater support localization. As of the current version, locali
 * `uk_UA` / Ukrainian / Stas
 * `zh_CN` / Simplified Chinese / [天毅许](http://www.freewarecn.com/)
 
-You can translate the plugin in your language if it's not done already. The localization template file (glg-accolades.pot) can be found in the 'languages' folder of the plugin. After translating send the localized files to the [plugin author](http://srinig.com/wordpress/contact/) so that it's included in the next update. If you are not sure how to go about translating, contact the plugin author.
+You can translate the plugin in your language if it's not done already. The localization template file (scrolling-accolades.pot) can be found in the 'languages' folder of the plugin. After translating send the localized files to the [plugin author](http://srinig.com/wordpress/contact/) so that it's included in the next update. If you are not sure how to go about translating, contact the plugin author.
 
 ==Changelog==
 
@@ -286,7 +286,7 @@ You can translate the plugin in your language if it's not done already. The loca
 	* Pagination in admin page. Other minor improvements in the admin page.
 	* Fixes for deprecated functions and undefined variables. Various other minor fixes and improvements.
 	* Bahasa Indonesia (id_ID) localization added. Tamil localization updated.
-	* The `.po` template file `glg-accolades.pot` is updated. New strings added, few strings have become obsolete.
+	* The `.po` template file `scrolling-accolades.pot` is updated. New strings added, few strings have become obsolete.
 
 * **2010-12-03: Version 1.4.4**
 	* Updated Simplified Chinese localization
@@ -320,7 +320,7 @@ You can translate the plugin in your language if it's not done already. The loca
 
 * **2009-09-22: Version 1.3.5**
 	* Brazilian Portugese localization added.
-	* Modifications in glg-accolades.js (for better debugging in case of error)
+	* Modifications in scrolling-accolades.js (for better debugging in case of error)
 	
 * **2009-08-24: Version 1.3.4**
 	* Finnish localization added.
@@ -375,10 +375,10 @@ You can translate the plugin in your language if it's not done already. The loca
 
 * **2008-09-24: Version 1.2.1**
     * Arabic translation added
-    * Minor fix (glg-accolades.js: errotext -> errortext)
+    * Minor fix (scrolling-accolades.js: errotext -> errortext)
 
 * **2008-09-22: Version 1.2**
-    * All javascript code moved to glg-accolades.js. This makes the code neater.
+    * All javascript code moved to scrolling-accolades.js. This makes the code neater.
     * Translations for French, Polish and Turkish languages added.
     * Italian and Russian translations updated.
     * A few minor fixes and small improvements.

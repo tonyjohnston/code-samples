@@ -1,45 +1,45 @@
 var blurFlag = false;
 
-function glgaccolades_init()
-{
+function scrolling_accolades_init() {
     // Real browser events
-    $(window).focus(function() {
-	window.focus();
-	blurFlag = false;
-    });    
-    
-    // Weird IE8 event
-    $(window).focusin(function() {
-	blurFlag = false;
+    $(window).focus(function () {
+        window.focus();
+        blurFlag = false;
     });
 
-    $(window).blur(function() {
-	blurFlag = true;
-    });    
+    // Weird IE8 event
+    $(window).focusin(function () {
+        blurFlag = false;
+    });
+
+    $(window).blur(function () {
+        blurFlag = true;
+    });
 }
 
-function glgaccolades_timer()
-{   
+function scrolling_accolades_timer() {
     //console.log("STATUS: "+document.blurFlag);
     /* TODO: Set and get timeout interval via admin interface */
-    glgaccolades_refresh();
-    setTimeout("glgaccolades_timer()", 3000);
+    scrolling_accolades_refresh();
+    setTimeout("scrolling_accolades_timer()", 3000);
 }
 
-function glgaccolades_refresh()
-{    
-    if(blurFlag) {
-	return;
-    };
-    
-    var glgScroller = jQuery("#glgaccolades-scroller");
-    
-    var firstQuote = glgScroller.find('div').filter(':visible:first');
-    var newQuote = '<div class="glgaccolades-scroller">'+firstQuote.html()+'</div>';
+function scrolling_accolades_refresh() {
+    if (blurFlag) {
+        return;
+    }
+    ;
+
+    var scrollingScroller = jQuery("#scrolling_accolades-scroller");
+
+    var firstQuote = scrollingScroller.find('div').filter(':visible:first');
+    var newQuote = '<div class="scrolling_accolades-scroller">' + firstQuote.html() + '</div>';
     var height = firstQuote.height();
-    
-    glgScroller.append(newQuote);
-    firstQuote.animate({marginTop:'-='+height},1000,'swing',function(){$("#glgaccolades-scroller").find('div').filter(':visible:first').remove();});
+
+    scrollingScroller.append(newQuote);
+    firstQuote.animate({marginTop: '-=' + height}, 1000, 'swing', function () {
+        $("#scrolling_accolades-scroller").find('div').filter(':visible:first').remove();
+    });
 }
 
 
