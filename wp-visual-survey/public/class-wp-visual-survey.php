@@ -119,7 +119,7 @@ class WP_Visual_Survey
 
             add_action('admin_init', array(self, 'deactivate'));
             add_action('admin_notices', array(self, 'display_unmet_dependencies_notice'));
-
+            return;
         }
 
         if (function_exists('is_multisite') && is_multisite()) {
