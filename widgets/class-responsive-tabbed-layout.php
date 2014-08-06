@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @package   Dreambox_Custom
+ * @package   Responsive_Tabs
  * @author    Tony Johnston <tony.johnston@glg.com>
  *
- * Description:       Video marquee widget for primary hub pages
+ * Description:       Responsive tabbed layout widget. Mobile view it's an accordion.
  * Version:           1.0.0
- * Text Domain:       dreambox-custom
+ * Text Domain:       responsive-tabbed-layout
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
  */
-class Hub_Video_Marquee extends WP_Widget {
+class Responsive_Tabbed_Layout extends WP_Widget {
 
     /**
      * The variable name is used as the text domain when internationalizing strings
@@ -22,7 +22,7 @@ class Hub_Video_Marquee extends WP_Widget {
      *
      * @var      string
      */
-    protected $widget_slug = 'hub-video-marquee';
+    protected $widget_slug = 'responsive-tabbed-layout';
 
     /* -------------------------------------------------- */
     /* Constructor
@@ -35,24 +35,25 @@ class Hub_Video_Marquee extends WP_Widget {
     public function __construct() {
 
         // load plugin text domain
-        //add_action('init', array($this, 'widget_textdomain'));
+        add_action('init', array($this, 'widget_textdomain'));
 
         // Hooks fired when the Widget is activated and deactivated
         // register_activation_hook(__FILE__, array($this, 'activate'));
         // register_deactivation_hook(__FILE__, array($this, 'deactivate'));
 
+        // TODO: update description
         parent::__construct(
-            $this->get_widget_slug(), __('Hub Video Marquee', $this->get_widget_slug()), array(
+            $this->get_widget_slug(), __('Responsive Tabbed Layout', $this->get_widget_slug()), array(
                 'classname' => $this->get_widget_slug() . '-class',
-                'description' => __('Featured video content for parimary hub marquees.', $this->get_widget_slug())
+                'description' => __('Responsive tabbed-to-accordion layout widget.', $this->get_widget_slug())
             )
         );
 
         // Register admin styles and scripts
         // add_action('admin_print_styles', array($this, 'register_admin_styles'));
-        add_action('admin_enqueue_scripts', array($this, 'register_admin_scripts'));
+        // add_action('admin_enqueue_scripts', array($this, 'register_admin_scripts'));
 
-        // Register public styles and scripts
+        // Register site styles and scripts
         // add_action('wp_enqueue_scripts', array($this, 'register_widget_styles'));
         // add_action('wp_enqueue_scripts', array($this, 'register_widget_scripts'));
 
@@ -87,6 +88,7 @@ class Hub_Video_Marquee extends WP_Widget {
      */
     public function widget($args, $instance) {
 
+
         // Check if there is a cached output
         $cache = wp_cache_get($this->get_widget_slug(), 'widget');
 
@@ -101,16 +103,12 @@ class Hub_Video_Marquee extends WP_Widget {
 
         // go on with your widget logic, put everything into a string and …
 
+
         extract($args, EXTR_SKIP);
 
-        $widget_string = $before_widget;
-
-        // TODO: Here is where you manipulate your widget's values based on their input fields
         ob_start();
-        include( plugin_dir_path(__FILE__) . 'views/hub-video-marquee-widget.php' );
-        $widget_string .= ob_get_clean();
-        $widget_string .= $after_widget;
-
+        include( plugin_dir_path(__FILE__) . 'views/tabbed-layouts-widget.php' );
+        $widget_string = ob_get_clean();
 
         $cache[$args['widget_id']] = $widget_string;
 
@@ -150,23 +148,58 @@ class Hub_Video_Marquee extends WP_Widget {
      * @param array instance The array of keys and values for the widget.
      */
     public function form($instance) {
-        // TODO: Define default values for your variables
+        // TODO: Define default values for variables
         $instance = wp_parse_args(
                 (array) $instance
         );
-        
-        // TODO: Store the values of the widget in their own variable
+
         // Display the admin form
-        include( plugin_dir_path(__FILE__) . 'views/hub-video-marquee-widget-admin.php' );
+        include( plugin_dir_path(__FILE__) . 'views/tabbed-layouts-widget-admin.php' );
     }
 
 // end form
+
+    /* -------------------------------------------------- */
+    /* Public Functions
+      /*-------------------------------------------------- */
+
     /**
-     * Registers and enqueues admin-specific styles. Needs to be fixed since this code used to be a standalone plugin.
+     * Loads the Widget's text domain for localization and translation.
+     */
+    public function widget_textdomain() {
+
+        load_plugin_textdomain($this->get_widget_slug(), false, plugin_dir_path(__FILE__) . 'lang/');
+    }
+
+
+    /**
+     * Fired when the plugin is activated.
+     *
+     * @param  boolean $network_wide True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
+     */
+    public function activate($network_wide) {
+        // TODO define activation functionality here
+    }
+
+// end activate
+
+    /**
+     * Fired when the plugin is deactivated.
+     *
+     * @param boolean $network_wide True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog
+     */
+    public function deactivate($network_wide) {
+        // TODO define deactivation functionality here
+    }
+
+// end deactivate
+
+    /**
+     * Registers and enqueues admin-specific styles.
      */
     public function register_admin_styles() {
 
-        //wp_enqueue_style($this->get_widget_slug() . '-admin-styles', plugins_url('css/admin.css', __FILE__));
+        // wp_enqueue_style($this->get_widget_slug() . '-admin-styles', plugins_url('css/admin.css', __FILE__));
     }
 
 // end register_admin_styles
@@ -176,7 +209,7 @@ class Hub_Video_Marquee extends WP_Widget {
      */
     public function register_admin_scripts() {
 
-       wp_enqueue_script($this->get_widget_slug() . '-admin-script', plugins_url('js/admin.js', __FILE__), array('jquery'));
+        // wp_enqueue_script($this->get_widget_slug() . '-admin-script', plugins_url('js/admin.js', __FILE__), array('jquery'));
     }
 
 // end register_admin_scripts
@@ -185,6 +218,7 @@ class Hub_Video_Marquee extends WP_Widget {
      * Registers and enqueues widget-specific styles.
      */
     public function register_widget_styles() {
+
         // wp_enqueue_style($this->get_widget_slug() . '-widget-styles', plugins_url('css/widget.css', __FILE__));
     }
 
@@ -195,12 +229,12 @@ class Hub_Video_Marquee extends WP_Widget {
      */
     public function register_widget_scripts() {
 
-        // wp_enqueue_script($this->get_widget_slug() . '-script', plugins_url('js/admin.js', __FILE__), array('jquery'));
+        // wp_enqueue_script($this->get_widget_slug() . '-script', plugins_url('js/tabbed-layouts-widget.js', __FILE__), array('jquery'));
     }
 
 // end register_widget_scripts
-	
 }
 
 // end class
-add_action('widgets_init', create_function('', 'register_widget("Hub_Video_Marquee");'));
+// TODO: Remember to change 'Widget_Name' to match the class name definition
+add_action('widgets_init', create_function('', 'register_widget("Responsive_Tabbed_Layout");'));
