@@ -56,7 +56,8 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Is this a joke? ==
 
-It kind of is. I'm just getting it into GitHub so that I can show it off. On the other hand, it's also not a joke.
+It kind of is. I'm just getting it into GitHub so that I can have some code samples.
+On the other hand, it's also not a joke.
 
 == Updates ==
 
