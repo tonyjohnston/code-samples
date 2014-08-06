@@ -1,6 +1,6 @@
 <?php
 /**
- * Based on Tim Mcfarlin's WordPress Plugin Boilerplate.
+ * Based on Tom Mcfarlin's WordPress Plugin Boilerplate.
  *
  * A foundation off of which to build well-documented WordPress plugins that
  * also follow WordPress Coding Standards and PHP best practices.
